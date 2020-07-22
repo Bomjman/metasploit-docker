@@ -2,7 +2,7 @@ services:
     - docker
 
 before_script:
-    - docker build -f "Dockerfile" -t metasploit:latest "."
+    - docker build -f "Dockerfile" -t metasploit:latest .
     - docker run -it --rm -e POSTGRES_PASSWORD=mysecretpassword metasploit:latest
       
 script:
