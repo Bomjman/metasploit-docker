@@ -5,6 +5,6 @@ RUN apt update && apt install curl systemctl -y && \
     chmod 755 msfinstall && \
     ./msfinstall
 
-RUN systemctl enable postgresql && systemctl start postgresql
+RUN service postgresql enable && service postgresql start
 
 CMD [ "msfconsole" ]
