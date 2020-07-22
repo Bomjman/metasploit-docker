@@ -3,10 +3,9 @@ services:
 
 before_script:
     - docker build -f "Dockerfile" -t metasploit:latest .
-    - docker run -it --rm -e POSTGRES_PASSWORD=mysecretpassword metasploit:latest /bin/bash
-      
+    
 script:
-     - msfconsole \ msfdb run
+    - docker run -it --rm -e POSTGRES_PASSWORD=mysecretpassword metasploit:latest msfdb run
 
 after_script:
     - docker stop metasploit:latest
