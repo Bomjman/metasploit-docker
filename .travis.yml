@@ -5,7 +5,7 @@ before_script:
     - docker build -f "Dockerfile" -t metasploit:latest .
     
 script:
-    - docker run -it --rm -e POSTGRES_PASSWORD=mysecretpassword metasploit:latest msfdb run
+    - docker run -it --rm -e POSTGRES_PASSWORD=mysecretpassword metasploit:latest msfdb init
 
 after_script:
     - docker stop metasploit:latest
